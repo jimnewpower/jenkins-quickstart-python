@@ -4,8 +4,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh echo 'Hello Docker Pipeline'
                 sh 'python --version'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'testing...'
             }
         }
     }
