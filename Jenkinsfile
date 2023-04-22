@@ -1,15 +1,20 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                echo 'building jenkins quickstart...'
             }
         }
         stage('test') {
             steps {
-                echo 'testing...'
+                echo 'testing jenkins quickstart...'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploying jenkins quickstart...'
             }
         }
     }
